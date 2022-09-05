@@ -4,17 +4,16 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 
-import javax.sound.sampled.SourceDataLine;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
-public class IntakeCommand extends CommandBase {
+public class ShooterCommand extends CommandBase {
 
-  private final IntakeSubsystem intakeSubsystem;
-  private final boolean open;
+  private final ShooterSubsystem shooterSubsystem;
+  private final boolean run;
 
 
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
@@ -25,29 +24,29 @@ public class IntakeCommand extends CommandBase {
    *
    * @param subsystem The subsystem used by this command.
    */
-  public IntakeCommand(IntakeSubsystem intakeSubsystem, boolean open) {
-    this.open = open;
-    this.intakeSubsystem = intakeSubsystem;
+  public ShooterCommand(ShooterSubsystem shooterSubsystem, boolean run) {
+    this.run = run;
+    this.shooterSubsystem = shooterSubsystem;
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(intakeSubsystem);
+    addRequirements(shooterSubsystem);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    System.out.println("IntakeCommand started");
+    System.out.println("ShooterCommand started");
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    intakeSubsystem.setPosition(open);
+    shooterSubsystem.setPosition(run);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    System.out.println("IntakeCommand ended");
+    System.out.println("ShooterCommand ended");
   }
 
   // Returns true when the command should end.
