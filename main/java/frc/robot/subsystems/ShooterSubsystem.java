@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import static frc.robot.Constants.ShooterConstants.SHOOTER_OFF_SPEED;
 import static frc.robot.Constants.ShooterConstants.SHOOTER_ON_SPEED;
-import static frc.robot.Constants.SHOOTER_DRIVE_ID;
+import static frc.robot.Constants.ShooterConstants.SHOOTER_DRIVE_ID;
 
 public class ShooterSubsystem extends SubsystemBase {
   
